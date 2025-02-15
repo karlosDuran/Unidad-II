@@ -1,4 +1,4 @@
-import 'package:donut_app/pages/home_page.dart';
+import 'package:donut_app_2c_duran/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        tabBarTheme: const TabBarTheme(
+          indicatorColor: Colors.pink,
+        ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
