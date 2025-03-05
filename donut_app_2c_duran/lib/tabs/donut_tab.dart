@@ -1,3 +1,4 @@
+import 'package:donut_app_2c_duran/utils/donut_tile.dart';
 import 'package:flutter/material.dart';
 
 class DonutTab extends StatelessWidget {
@@ -21,16 +22,18 @@ class DonutTab extends StatelessWidget {
         //espacio entre texto
         padding: EdgeInsets.all(12),
         //Prepa 1. como se distuibiran los elementos
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             //crosaxis en una fila el eje crusado es el vertical
-            crossAxisCount: 2),
+            crossAxisCount: 2,
+            //relacion de aspecto(Proporcion)
+            childAspectRatio: 1 / 1.5),
         itemBuilder: (context, index) {
           //cada elemento individual
           return DonutTile(
             donutFlavor: donutsOnSale[index][0],
             donutPrice: donutsOnSale[index][1],
             donutColor: donutsOnSale[index][2],
-            donutName: donutsOnSale[index][3],
+            imageName: donutsOnSale[index][3],
           );
         });
   }
