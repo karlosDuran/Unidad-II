@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // Clase DonutTile que extiende StatelessWidget
 class DonutTile extends StatelessWidget {
   final String donutFlavor; // Sabor de la dona
+  final String donutStore; //lugar de la dona
   final String donutPrice; // Precio de la dona
   final dynamic donutColor; // Color de la dona (dato dinámico)
   final String imageName; // Nombre de la imagen de la dona
@@ -11,6 +12,7 @@ class DonutTile extends StatelessWidget {
   const DonutTile(
       {super.key,
       required this.donutFlavor, // Sabor de la dona requerido
+      required this.donutStore,
       required this.donutPrice, // Precio de la dona requerido
       this.donutColor, // Color de la dona opcional
       required this.imageName}); // Nombre de la imagen requerido
@@ -64,7 +66,38 @@ class DonutTile extends StatelessWidget {
               child: Image.asset(imageName), // Carga la imagen de la dona
             ),
             // Texto del sabor de la dona (se puede agregar aquí)
-            // Icono de amor + botón de añadir (se puede agregar aquí)
+            Text(donutFlavor,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+
+            //espacio entre textos
+            const SizedBox(
+              height: 4,
+            ),
+            //TODO: agregar texto de la tienda, pasar a comprar mota
+            Text(donutStore,
+                style: const TextStyle(
+                    fontWeight: FontWeight.normal, fontSize: 16)),
+            // Icono de amor + palabr "add" (se puede agregar aquí) usando un row
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(
+                    Icons.favorite,
+                  ),
+                  Text(
+                    "add",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w300,
+                        fontSize: 15,
+                        decoration: TextDecoration.underline),
+                  ),
+                ],
+              ),
+            )
+            //b
           ],
         ),
       ),
