@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
             leading: Icon(Icons.menu, color: Colors.grey[800]),
             actions: const [
               Padding(
-                padding: const EdgeInsets.only(right: 24.0),
+                padding: EdgeInsets.only(right: 24.0),
                 child: Icon(Icons.person),
               )
             ],
@@ -75,8 +75,56 @@ class _HomePageState extends State<HomePage> {
                 PancakesTab(),
                 PizzaTab()
               ]),
-            )
+            ),
+
             //Carrito(Cart)
+            Container(
+                color: Colors.white,
+                padding: const EdgeInsets.all(16),
+                //como se llama el widget que pone las cosas de manera horizontal
+
+                child: Row(
+                    //alinea a los extremos
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          //alinear horizontalmente una columna
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '2 Items | \$45',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 18),
+                            ),
+                            Text(
+                              "Delivery Chargers Included",
+                              style: TextStyle(fontSize: 12),
+                            ),
+                          ],
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.pink,
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 24, vertical: 12)),
+                        child: Row(
+                          children: [
+                            Icon(Icons.shopping_cart, color: Colors.white),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'View Cart',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      )
+                    ]))
           ])),
     );
   }

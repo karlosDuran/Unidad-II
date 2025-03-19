@@ -7,26 +7,54 @@ class DonutTab extends StatelessWidget {
     // [ donutFlavor, donutPrice, donutColor, imageName ]
     [
       "Ice Cream",
-      "Krispy kreme",
+      "Krispy Kreme",
       "36",
       Colors.blue,
       "lib/images/icecream_donut.png"
     ],
     [
       "Strawberry",
-      "Donuts",
+      "Dunkin's",
       "45",
-      Colors.red,
+      Colors.pink,
       "lib/images/strawberry_donut.png"
     ],
     [
       "Grape Ape",
-      "Krispy kreme",
+      "Krispy Kreme",
       "84",
       Colors.purple,
       "lib/images/grape_donut.png"
     ],
-    ["Choco", "Donuts", "95", Colors.brown, "lib/images/chocolate_donut.png"]
+    ["Choco", "Dunkin's", "95", Colors.brown, "lib/images/chocolate_donut.png"],
+    [
+      "Crema de nata",
+      "Krispy Kreme",
+      "36",
+      Colors.blue,
+      "lib/images/icecream_donut.png"
+    ],
+    [
+      "fresas con crema",
+      "Dunkin's",
+      "45",
+      Colors.pink,
+      "lib/images/strawberry_donut.png"
+    ],
+    [
+      "unicornio",
+      "Krispy Kreme",
+      "84",
+      Colors.purple,
+      "lib/images/grape_donut.png"
+    ],
+    [
+      "peanut butter",
+      "Dunkin's",
+      "95",
+      Colors.brown,
+      "lib/images/chocolate_donut.png"
+    ],
   ];
 
   DonutTab({super.key});
