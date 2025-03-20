@@ -7,15 +7,17 @@ class DonutTile extends StatelessWidget {
   final String donutPrice; // Precio de la dona
   final dynamic donutColor; // Color de la dona (dato dinámico)
   final String imageName; // Nombre de la imagen de la dona
-
+  final Function onAdd; // Callback para agregar al carrito
   // Constructor de la clase DonutTile
-  const DonutTile(
-      {super.key,
-      required this.donutFlavor, // Sabor de la dona requerido
-      required this.donutStore,
-      required this.donutPrice, // Precio de la dona requerido
-      this.donutColor, // Color de la dona opcional
-      required this.imageName}); // Nombre de la imagen requerido
+  const DonutTile({
+    super.key,
+    required this.donutFlavor, // Sabor de la dona requerido
+    required this.donutStore,
+    required this.donutPrice, // Precio de la dona requerido
+    this.donutColor, // Color de la dona opcional
+    required this.imageName,
+    required this.onAdd, // Recibe la función como parámetro
+  }); // Nombre de la imagen requerido
 
   @override
   Widget build(BuildContext context) {
@@ -87,12 +89,18 @@ class DonutTile extends StatelessWidget {
                   Icon(
                     Icons.favorite,
                   ),
-                  Text(
-                    "add",
-                    style: TextStyle(
+                  GestureDetector(
+                    onTap: () {
+                      onAdd(); // Llama a la función para agregar al carrito
+                    },
+                    child: Text(
+                      "add",
+                      style: TextStyle(
                         fontWeight: FontWeight.w300,
                         fontSize: 15,
-                        decoration: TextDecoration.underline),
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
                   ),
                 ],
               ),

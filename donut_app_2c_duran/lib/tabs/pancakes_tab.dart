@@ -2,83 +2,72 @@ import 'package:flutter/material.dart';
 import '../utils/donut_tile.dart';
 
 class PancakesTab extends StatelessWidget {
-  final List donutsOnSale = [
-    //[donutFlavor,donutPrice,donutColor,ImageName]
-    [
-      "Ice Cream",
-      "Krispy Kreme",
-      "36",
-      Colors.blue,
-      "lib/images/icecream_donut.png"
-    ],
+  final Function(double) onAdd; // Callback para agregar al carrito
+
+  // Lista de pancakes en venta
+  final List<List<dynamic>> donutsOnSale = [
+    // [donutFlavor, donutStore, donutPrice, donutColor, imageName]
     [
       "Strawberry",
-      "Dunkin's",
-      "45",
-      Colors.pink,
-      "lib/images/strawberry_donut.png"
-    ],
-    [
-      "Grape Ape",
-      "Krispy Kreme",
-      "84",
-      Colors.purple,
-      "lib/images/grape_donut.png"
-    ],
-    ["Choco", "Dunkin's", "95", Colors.brown, "lib/images/chocolate_donut.png"],
-    [
-      "Crema de nata",
       "Krispy Kreme",
       "36",
       Colors.blue,
-      "lib/images/icecream_donut.png"
+      "lib/images/pancake1.png"
     ],
     [
-      "fresas con crema",
-      "Dunkin's",
+      "Blueberries",
+      "Dunkin Donuts",
       "45",
-      Colors.pink,
-      "lib/images/strawberry_donut.png"
+      Colors.red,
+      "lib/images/pancake2.png"
     ],
     [
-      "unicornio",
-      "Krispy Kreme",
+      "Whipped cream",
+      "Aurrerá",
       "84",
       Colors.purple,
-      "lib/images/grape_donut.png"
+      "lib/images/pancake3.png"
     ],
+    ["Nature", "Costco", "95", Colors.brown, "lib/images/pancake4.png"],
     [
-      "peanut butter",
-      "Dunkin's",
-      "95",
-      Colors.brown,
-      "lib/images/chocolate_donut.png"
+      "Sweet combination",
+      "Krispy Kreme",
+      "36",
+      Colors.blue,
+      "lib/images/pancake5.png"
     ],
+    ["Chocolate", "Dunkin Donuts", "45", Colors.red, "lib/images/pancake6.png"],
+    ["Crepe", "Aurrerá", "84", Colors.purple, "lib/images/pancake7.png"],
+    ["Super Honey", "Costco", "95", Colors.brown, "lib/images/pancake8.png"],
   ];
-  PancakesTab({super.key});
+
+  // Constructor que recibe la función de callback
+  PancakesTab({super.key, required this.onAdd});
+
   @override
   Widget build(BuildContext context) {
-    //Widget para usar cuadicula
+    // Widget para usar cuadrícula
     return GridView.builder(
-        //cuantos elementos hay en la regilla
-        itemCount: donutsOnSale.length,
-        //espacio entre texto
-        padding: EdgeInsets.all(12),
-        //Prepa 1. como se distuibiran los elementos
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            //crosaxis en una fila el eje crusado es el vertical
-            crossAxisCount: 2,
-            //relacion de aspecto(Proporcion)
-            childAspectRatio: 1 / 1.6),
-        itemBuilder: (context, index) {
-          //cada elemento individual
-          return DonutTile(
-            donutFlavor: donutsOnSale[index][0],
-            donutStore: donutsOnSale[index][1],
-            donutPrice: donutsOnSale[index][2],
-            donutColor: donutsOnSale[index][3],
-            imageName: donutsOnSale[index][4],
-          );
-        });
+      itemCount: donutsOnSale.length,
+      padding: EdgeInsets.all(12),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 1 / 1.6,
+      ),
+      itemBuilder: (context, index) {
+        // Cada elemento individual
+        return DonutTile(
+          donutFlavor: donutsOnSale[index][0],
+          donutStore: donutsOnSale[index][1],
+          donutPrice: donutsOnSale[index][2],
+          donutColor: donutsOnSale[index][3],
+          imageName: donutsOnSale[index][4],
+          onAdd: () {
+            // Llama a la función de callback y pasa el precio
+            onAdd(double.parse(donutsOnSale[index][2]));
+          },
+        );
+      },
+    );
   }
 }

@@ -2,83 +2,74 @@ import 'package:flutter/material.dart';
 import '../utils/donut_tile.dart';
 
 class SmoothieTab extends StatelessWidget {
-  final List donutsOnSale = [
-    //[donutFlavor,donutPrice,donutColor,ImageName]
+  final Function(double) onAdd; // Callback para agregar al carrito
+
+  // Lista de smoothies en venta
+  final List<List<dynamic>> donutsOnSale = [
+    // [donutFlavor, donutStore, donutPrice, donutColor, imageName]
     [
-      "Ice Cream",
+      "Chocolate",
       "Krispy Kreme",
-      "36",
+      "66",
       Colors.blue,
-      "lib/images/icecream_donut.png"
+      "lib/images/Smoothie 1.png"
     ],
     [
       "Strawberry",
-      "Dunkin's",
+      "Dunkin Donuts",
       "45",
-      Colors.pink,
-      "lib/images/strawberry_donut.png"
+      Colors.red,
+      "lib/images/Smoothie 2.png"
     ],
+    ["Banana", "Aurrerá", "24", Colors.purple, "lib/images/Smoothie 3.png"],
+    ["Matcha", "Costco", "35", Colors.brown, "lib/images/Smoothie 4.png"],
     [
-      "Grape Ape",
+      "Strawberry",
       "Krispy Kreme",
-      "84",
-      Colors.purple,
-      "lib/images/grape_donut.png"
-    ],
-    ["Choco", "Dunkin's", "95", Colors.brown, "lib/images/chocolate_donut.png"],
-    [
-      "Crema de nata",
-      "Krispy Kreme",
-      "36",
+      "56",
       Colors.blue,
-      "lib/images/icecream_donut.png"
+      "lib/images/Smoothie 5.png"
     ],
     [
-      "fresas con crema",
-      "Dunkin's",
-      "45",
-      Colors.pink,
-      "lib/images/strawberry_donut.png"
+      "Blueberries",
+      "Dunkin Donuts",
+      "75",
+      Colors.red,
+      "lib/images/Smoothie 6.png"
     ],
-    [
-      "unicornio",
-      "Krispy Kreme",
-      "84",
-      Colors.purple,
-      "lib/images/grape_donut.png"
-    ],
-    [
-      "peanut butter",
-      "Dunkin's",
-      "95",
-      Colors.brown,
-      "lib/images/chocolate_donut.png"
-    ],
+    ["Orangeade", "Aurrerá", "24", Colors.purple, "lib/images/Smoothie 7.png"],
+    ["Lemonade", "Costco", "40", Colors.brown, "lib/images/Smoothie 8.png"],
   ];
-  SmoothieTab({super.key});
+
+  // Constructor que recibe la función de callback
+  SmoothieTab({super.key, required this.onAdd});
+
   @override
   Widget build(BuildContext context) {
-    //Widget para usar cuadicula
+    // Widget para usar cuadrícula
     return GridView.builder(
-        //cuantos elementos hay en la regilla
-        itemCount: donutsOnSale.length,
-        //espacio entre texto
-        padding: EdgeInsets.all(12),
-        //Prepa 1. como se distuibiran los elementos
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            //crosaxis en una fila el eje crusado es el vertical
-            crossAxisCount: 2,
-            //relacion de aspecto(Proporcion)
-            childAspectRatio: 1 / 1.6),
-        itemBuilder: (context, index) {
-          //cada elemento individual
-          return DonutTile(
-            donutFlavor: donutsOnSale[index][0],
-            donutStore: donutsOnSale[index][1],
-            donutPrice: donutsOnSale[index][2],
-            donutColor: donutsOnSale[index][3],
-            imageName: donutsOnSale[index][4],
-          );
-        });
+      itemCount: donutsOnSale.length,
+      padding: EdgeInsets.symmetric(
+          horizontal: 12, vertical: 16), // Ajuste en padding
+      clipBehavior: Clip.antiAlias, // Evita que los elementos sobresalgan
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 1 / 1.64,
+      ),
+      itemBuilder: (context, index) {
+        // Cada elemento individual
+        return DonutTile(
+          donutFlavor: donutsOnSale[index][0],
+          donutStore: donutsOnSale[index][1],
+          donutPrice: donutsOnSale[index][2],
+          donutColor: donutsOnSale[index][3],
+          imageName: donutsOnSale[index][4],
+          onAdd: () {
+            // Llama a la función de callback y pasa el precio
+            onAdd(double.parse(donutsOnSale[index][2]));
+          },
+        );
+      },
+    );
   }
 }
