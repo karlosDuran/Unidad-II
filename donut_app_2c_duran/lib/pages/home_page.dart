@@ -1,3 +1,4 @@
+import 'package:donut_app_2c_duran/pages/auth/profile_page.dart';
 import 'package:donut_app_2c_duran/tabs/burger_tab.dart';
 import 'package:donut_app_2c_duran/tabs/donut_tab.dart';
 import 'package:donut_app_2c_duran/tabs/pancakes_tab.dart';
@@ -40,10 +41,19 @@ class _HomePageState extends State<HomePage> {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             leading: Icon(Icons.menu, color: Colors.grey[800]),
-            actions: const [
+            actions: [
               Padding(
-                padding: EdgeInsets.only(right: 24.0),
-                child: Icon(Icons.person),
+                padding: const EdgeInsets.only(right: 24.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProfilePage()),
+                    );
+                  },
+                  child: const Icon(Icons.person),
+                ),
               )
             ],
           ),
@@ -105,10 +115,10 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Text(
                               '$itemCount Items | \$${totalCost.toStringAsFixed(2)}',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 18),
                             ),
-                            Text(
+                            const Text(
                               "Delivery Chargers Included",
                               style: TextStyle(fontSize: 12),
                             ),
@@ -119,9 +129,9 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.pink,
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 24, vertical: 12)),
-                        child: Row(
+                        child: const Row(
                           children: [
                             Icon(Icons.shopping_cart, color: Colors.white),
                             SizedBox(

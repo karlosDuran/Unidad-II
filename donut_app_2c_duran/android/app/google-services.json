@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "229706843095",
+    "project_id": "marzo-karlos-2c-5ab40",
+    "storage_bucket": "marzo-karlos-2c-5ab40.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229706843095:android:cfbbf387394a101cb7c192",
+        "android_client_info": {
+          "package_name": "com.example.donut_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe5S6KogbWX9qPXX69xfm9DUCHN39DhAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
