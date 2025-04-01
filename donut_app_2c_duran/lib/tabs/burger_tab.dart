@@ -79,7 +79,7 @@ class BurgerTab extends StatelessWidget {
         //cuantos elementos hay en la regilla
         itemCount: donutsOnSale.length,
         //espacio entre texto
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         //Prepa 1. como se distuibiran los elementos
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             //crosaxis en una fila el eje crusado es el vertical

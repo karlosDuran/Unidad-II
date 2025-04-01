@@ -49,7 +49,7 @@ class SmoothieTab extends StatelessWidget {
     // Widget para usar cuadrícula
     return GridView.builder(
       itemCount: donutsOnSale.length,
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
           horizontal: 12, vertical: 16), // Ajuste en padding
       clipBehavior: Clip.antiAlias, // Evita que los elementos sobresalgan
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

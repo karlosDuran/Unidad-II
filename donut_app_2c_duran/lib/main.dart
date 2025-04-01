@@ -1,7 +1,6 @@
 import 'package:donut_app_2c_duran/firebase_options.dart';
 import 'package:donut_app_2c_duran/pages/auth/login_page.dart';
 import 'package:donut_app_2c_duran/pages/home_page.dart';
-import 'package:donut_app_2c_duran/firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';

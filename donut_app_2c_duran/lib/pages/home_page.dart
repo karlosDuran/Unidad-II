@@ -27,10 +27,10 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> myTabs = [
     const MyTab(iconPath: 'lib/icons/donut.png'),
-    MyTab(iconPath: 'lib/icons/burger.png'),
-    MyTab(iconPath: 'lib/icons/smoothie.png'),
-    MyTab(iconPath: 'lib/icons/pancakes.png'),
-    MyTab(iconPath: 'lib/icons/pizza.png'),
+    const MyTab(iconPath: 'lib/icons/burger.png'),
+    const MyTab(iconPath: 'lib/icons/smoothie.png'),
+    const MyTab(iconPath: 'lib/icons/pancakes.png'),
+    const MyTab(iconPath: 'lib/icons/pizza.png'),
   ];
 
   @override

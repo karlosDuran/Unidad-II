@@ -62,7 +62,7 @@ class DonutTab extends StatelessWidget {
     // Widget para usar cuadrícula
     return GridView.builder(
       itemCount: donutsOnSale.length,
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 1 / 1.6,

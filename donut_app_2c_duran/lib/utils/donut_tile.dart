@@ -86,14 +86,14 @@ class DonutTile extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.favorite,
                   ),
                   GestureDetector(
                     onTap: () {
                       onAdd(); // Llama a la función para agregar al carrito
                     },
-                    child: Text(
+                    child: const Text(
                       "add",
                       style: TextStyle(
                         fontWeight: FontWeight.w300,
