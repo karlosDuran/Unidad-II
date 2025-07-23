@@ -90,6 +90,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: TabBarView(children: [
                 DonutTab(onAdd: addItem),
+                DonutTab(onAdd: addItem),
                 BurgerTab(onAdd: addItem),
                 SmoothieTab(onAdd: addItem),
                 PancakesTab(onAdd: addItem),

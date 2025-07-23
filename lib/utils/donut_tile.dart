@@ -8,6 +8,7 @@ class DonutTile extends StatelessWidget {
   final dynamic donutColor; // Color de la dona (dato dinámico)
   final String imageName; // Nombre de la imagen de la dona
   final Function onAdd; // Callback para agregar al carrito
+  final String donuttime;
   // Constructor de la clase DonutTile
   const DonutTile({
     super.key,
@@ -17,6 +18,7 @@ class DonutTile extends StatelessWidget {
     this.donutColor, // Color de la dona opcional
     required this.imageName,
     required this.onAdd, // Recibe la función como parámetro
+    required this.donuttime,
   }); // Nombre de la imagen requerido
 
   @override
@@ -81,6 +83,16 @@ class DonutTile extends StatelessWidget {
                 style: const TextStyle(
                     fontWeight: FontWeight.normal, fontSize: 16)),
             // Icono de amor + palabr "add" (se puede agregar aquí) usando un row
+            const SizedBox(
+              height: 4,
+            ),
+            Text(
+              donuttime,
+              style: TextStyle(
+                fontSize: 14,
+                color: donutColor[700],
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Row(

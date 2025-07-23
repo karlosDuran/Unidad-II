@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Donut App',
       theme: ThemeData(
-        tabBarTheme: const TabBarTheme(
+        tabBarTheme: TabBarThemeData(
           indicatorColor: Colors.pink,
         ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

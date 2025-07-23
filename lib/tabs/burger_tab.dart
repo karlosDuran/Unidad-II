@@ -12,7 +12,8 @@ class BurgerTab extends StatelessWidget {
       " Krispy Kreme",
       "36",
       Colors.blue,
-      "lib/images/Hamburguesa 1.png"
+      "lib/images/Hamburguesa 1.png",
+      "4min"
     ],
 
     [
@@ -20,7 +21,8 @@ class BurgerTab extends StatelessWidget {
       "Dunkin Donuts",
       "45",
       Colors.red,
-      "lib/images/Hamburguesa 2.png"
+      "lib/images/Hamburguesa 2.png",
+      "4min"
     ],
 
     [
@@ -28,7 +30,8 @@ class BurgerTab extends StatelessWidget {
       "Aurrerá",
       "84",
       Colors.purple,
-      "lib/images/Hamburguesa 3.png"
+      "lib/images/Hamburguesa 3.png",
+      "4min"
     ],
 
     [
@@ -36,7 +39,8 @@ class BurgerTab extends StatelessWidget {
       "Costco",
       "95",
       Colors.brown,
-      "lib/images/Hamburguesa 4.png"
+      "lib/images/Hamburguesa 4.png",
+      "4min"
     ],
 
     [
@@ -44,7 +48,8 @@ class BurgerTab extends StatelessWidget {
       " Krispy Kreme",
       "36",
       Colors.blue,
-      "lib/images/Hamburguesa 5.png"
+      "lib/images/Hamburguesa 5.png",
+      "4min"
     ],
 
     [
@@ -52,7 +57,8 @@ class BurgerTab extends StatelessWidget {
       "Dunkin Donuts",
       "45",
       Colors.red,
-      "lib/images/Hamburguesa 6.png"
+      "lib/images/Hamburguesa 6.png",
+      "4min"
     ],
 
     [
@@ -60,7 +66,8 @@ class BurgerTab extends StatelessWidget {
       "Aurrerá",
       "84",
       Colors.purple,
-      "lib/images/Hamburguesa 7.png"
+      "lib/images/Hamburguesa 7.png",
+      "4min"
     ],
 
     [
@@ -85,7 +92,7 @@ class BurgerTab extends StatelessWidget {
             //crosaxis en una fila el eje crusado es el vertical
             crossAxisCount: 2,
             //relacion de aspecto(Proporcion)
-            childAspectRatio: 1 / 1.6),
+            childAspectRatio: 1 / 2),
         itemBuilder: (context, index) {
           //cada elemento individual
           return DonutTile(
@@ -94,6 +101,7 @@ class BurgerTab extends StatelessWidget {
             donutPrice: donutsOnSale[index][2],
             donutColor: donutsOnSale[index][3],
             imageName: donutsOnSale[index][4],
+            donuttime: donutsOnSale[index][5],
             onAdd: () {
               // Llama a la función de callback y pasa el precio
               onAdd(double.parse(donutsOnSale[index][2]));

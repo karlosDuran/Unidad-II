@@ -12,33 +12,58 @@ class PancakesTab extends StatelessWidget {
       "Krispy Kreme",
       "36",
       Colors.blue,
-      "lib/images/pancake1.png"
+      "lib/images/pancake1.png",
+      "4min"
     ],
     [
       "Blueberries",
       "Dunkin Donuts",
       "45",
       Colors.red,
-      "lib/images/pancake2.png"
+      "lib/images/pancake2.png",
+      "4min"
     ],
     [
       "Whipped cream",
       "Aurrerá",
       "84",
       Colors.purple,
-      "lib/images/pancake3.png"
+      "lib/images/pancake3.png",
+      "4min"
     ],
-    ["Nature", "Costco", "95", Colors.brown, "lib/images/pancake4.png"],
+    ["Nature", "Costco", "95", Colors.brown, "lib/images/pancake4.png", "4min"],
     [
       "Sweet combination",
       "Krispy Kreme",
       "36",
       Colors.blue,
-      "lib/images/pancake5.png"
+      "lib/images/pancake5.png",
+      "4min"
     ],
-    ["Chocolate", "Dunkin Donuts", "45", Colors.red, "lib/images/pancake6.png"],
-    ["Crepe", "Aurrerá", "84", Colors.purple, "lib/images/pancake7.png"],
-    ["Super Honey", "Costco", "95", Colors.brown, "lib/images/pancake8.png"],
+    [
+      "Chocolate",
+      "Dunkin Donuts",
+      "45",
+      Colors.red,
+      "lib/images/pancake6.png",
+      "4min"
+    ],
+    [
+      "Crepe",
+      "Aurrerá",
+      "84",
+      Colors.purple,
+      "lib/images/pancake7.png",
+      "4min"
+    ],
+    [
+      "Super Honey",
+      "Costco",
+      "95",
+      Colors.brown,
+      "lib/images/pancake8.png",
+      "4min"
+    ],
   ];
 
   // Constructor que recibe la función de callback
@@ -52,7 +77,7 @@ class PancakesTab extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 1 / 1.6,
+        childAspectRatio: 1 / 2,
       ),
       itemBuilder: (context, index) {
         // Cada elemento individual
@@ -62,6 +87,7 @@ class PancakesTab extends StatelessWidget {
           donutPrice: donutsOnSale[index][2],
           donutColor: donutsOnSale[index][3],
           imageName: donutsOnSale[index][4],
+          donuttime: donutsOnSale[index][5],
           onAdd: () {
             // Llama a la función de callback y pasa el precio
             onAdd(double.parse(donutsOnSale[index][2]));

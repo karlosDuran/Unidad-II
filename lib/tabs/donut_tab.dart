@@ -12,7 +12,8 @@ class DonutTab extends StatelessWidget {
       " Krispy Kreme",
       "36",
       Colors.blue,
-      "lib/images/icecream_donut.png"
+      "lib/images/icecream_donut.png",
+      "4min"
     ],
 
     [
@@ -20,19 +21,35 @@ class DonutTab extends StatelessWidget {
       "Dunkin Donuts",
       "45",
       Colors.red,
-      "lib/images/strawberry_donut.png"
+      "lib/images/strawberry_donut.png",
+      "4min"
     ],
 
-    ["Grape Ape", "Aurrerá", "84", Colors.purple, "lib/images/grape_donut.png"],
+    [
+      "Grape Ape",
+      "Aurrerá",
+      "84",
+      Colors.purple,
+      "lib/images/grape_donut.png",
+      "4min"
+    ],
 
-    ["Choco", "Costco", "95", Colors.brown, "lib/images/chocolate_donut.png"],
+    [
+      "Choco",
+      "Costco",
+      "95",
+      Colors.brown,
+      "lib/images/chocolate_donut.png",
+      "4min"
+    ],
 
     [
       "Marzipan",
       " Krispy Kreme",
       "36",
       Colors.blue,
-      "lib/images/icecream_donut.png"
+      "lib/images/icecream_donut.png",
+      "4min"
     ],
 
     [
@@ -40,7 +57,8 @@ class DonutTab extends StatelessWidget {
       "Dunkin Donuts",
       "45",
       Colors.red,
-      "lib/images/strawberry_donut.png"
+      "lib/images/strawberry_donut.png",
+      "4min"
     ],
 
     [
@@ -48,10 +66,18 @@ class DonutTab extends StatelessWidget {
       "Aurrerá",
       "84",
       Colors.purple,
-      "lib/images/grape_donut.png"
+      "lib/images/grape_donut.png",
+      "4min"
     ],
 
-    ["Nutella", "Costco", "95", Colors.brown, "lib/images/chocolate_donut.png"],
+    [
+      "Nutella",
+      "Costco",
+      "95",
+      Colors.brown,
+      "lib/images/chocolate_donut.png",
+      "4min"
+    ],
   ];
 
   // Constructor que recibe la función de callback
@@ -65,7 +91,7 @@ class DonutTab extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 1 / 1.6,
+        childAspectRatio: 1 / 2,
       ),
       itemBuilder: (context, index) {
         // Cada elemento individual
@@ -75,6 +101,7 @@ class DonutTab extends StatelessWidget {
           donutPrice: donutsOnSale[index][2],
           donutColor: donutsOnSale[index][3],
           imageName: donutsOnSale[index][4],
+          donuttime: donutsOnSale[index][5],
           onAdd: () {
             // Llama a la función de callback y pasa el precio
             onAdd(double.parse(donutsOnSale[index][2]));
